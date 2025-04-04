@@ -1,0 +1,194 @@
+{
+    "global": { "show_in_menu_bar": false },
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Disable Option-click minimizing windows",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "modifiers": { "mandatory": ["left_option"] },
+                                    "pointing_button": "button1"
+                                },
+                                "to": [
+                                    {
+                                        "modifiers": [],
+                                        "pointing_button": "button1"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "fn + Esc",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "mandatory": ["fn"] }
+                                },
+                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Toggle Fn Keys.app" } } }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "macropad esc_to_delete",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [
+                                            { "product_id": 37 },
+                                            { "vendor_id": 2522 }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": ["left_command"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [],
+                                        "repeat": false
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 37,
+                        "vendor_id": 2522
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "delete_or_backspace" },
+                            "to": [{ "key_code": "v" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_0" },
+                            "to": [{ "key_code": "keypad_asterisk" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_1" },
+                            "to": [{ "key_code": "b" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_2" },
+                            "to": [{ "key_code": "s" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_3" },
+                            "to": [{ "key_code": "t" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_4" },
+                            "to": [{ "key_code": "a" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_5" },
+                            "to": [{ "key_code": "2" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_6" },
+                            "to": [{ "key_code": "c" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_7" },
+                            "to": [{ "key_code": "tab" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_8" },
+                            "to": [{ "key_code": "w" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_9" },
+                            "to": [{ "key_code": "r" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_asterisk" },
+                            "to": [{ "key_code": "right_arrow" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_enter" },
+                            "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_hyphen" },
+                            "to": [{ "key_code": "up_arrow" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_num_lock" },
+                            "to": [{ "key_code": "escape" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_period" },
+                            "to": [{ "key_code": "e" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_plus" },
+                            "to": [{ "key_code": "x" }]
+                        },
+                        {
+                            "from": { "key_code": "keypad_slash" },
+                            "to": [{ "key_code": "left_arrow" }]
+                        }
+                    ]
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "product_id": 2,
+                        "vendor_id": 7247
+                    },
+                    "simple_modifications": [
+                        {
+                            "from": { "key_code": "application" },
+                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
+                        },
+                        {
+                            "from": { "key_code": "left_command" },
+                            "to": [{ "key_code": "left_option" }]
+                        },
+                        {
+                            "from": { "key_code": "left_option" },
+                            "to": [{ "key_code": "left_command" }]
+                        }
+                    ]
+                }
+            ],
+            "fn_function_keys": [
+                {
+                    "from": { "key_code": "f4" },
+                    "to": [{ "apple_vendor_top_case_key_code": "illumination_down" }]
+                },
+                {
+                    "from": { "key_code": "f5" },
+                    "to": [{ "apple_vendor_top_case_key_code": "illumination_up" }]
+                }
+            ],
+            "name": "Krita",
+            "selected": true,
+            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
+        },
+        {
+            "name": "New profile",
+            "virtual_hid_keyboard": { "keyboard_type_v2": "iso" }
+        }
+    ]
+}
