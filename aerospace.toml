@@ -80,6 +80,9 @@ alt-shift-c = 'close --quit-if-last-window'
 alt-shift-enter = 'exec-and-forget open -n /Applications/Nix\ Apps/Kitty.app'
 alt-shift-f = 'exec-and-forget open -n /Applications/Nix\ Apps/LibreWolf.app'
 alt-shift-s = 'exec-and-forget open -n /Applications/Nix\ Apps/Signal.app --args --use-tray-icon'
+alt-shift-p = "exec-and-forget karabiner_cli --select-profile 'Krita'"
+alt-shift-o = "exec-and-forget karabiner_cli --select-profile 'Rebelle'"
+alt-shift-a = "exec-and-forget osascript -e 'quit app \"AutoRaise\"' && open -n /Applications/AutoRaise.app --args -pollMillis 50 -delay 1 -scale 2.5 -altTaskSwitcher false -ignoreSpaceChanged false -disableKey control -mouseDelta 100.0"
 
 alt-shift-semicolon = 'mode service'
 
@@ -95,9 +98,6 @@ f = [
   'mode main',
 ] # Toggle between floating and tiling layout
 # autoraise reset
-a = [
-  "exec-and-forget osascript -e 'quit app \"AutoRaise\"' && open -n /Applications/AutoRaise.app --args -pollMillis 50 -delay 1 -scale 2.5 -altTaskSwitcher false -ignoreSpaceChanged false -disableKey control -mouseDelta 100.0",
-]
 backspace = ['close-all-windows-but-current', 'mode main']
 
 alt-shift-h = ['join-with left', 'mode main']
