@@ -1,5 +1,5 @@
 after-login-command = [
-  'exec-and-forget open -n /Applications/Signal.app --args --use-tray-icon',
+  'exec-and-forget open -n /Applications/Nix\ Apps/Signal.app --args --use-tray-icon',
 ]
 after-startup-command = [
   "exec-and-forget osascript -e 'quit app \"AutoRaise\"'",
@@ -77,9 +77,9 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 
 alt-shift-c = 'close --quit-if-last-window'
-alt-shift-enter = 'exec-and-forget open -n /Applications/Kitty.app'
-alt-shift-f = 'exec-and-forget open -n /Applications/LibreWolf.app'
-alt-shift-s = 'exec-and-forget open -n /Applications/Signal.app --args --use-tray-icon'
+alt-shift-enter = 'exec-and-forget open -n /Applications/Nix\ Apps/Kitty.app'
+alt-shift-f = 'exec-and-forget open -n /Applications/Nix\ Apps/LibreWolf.app'
+alt-shift-s = 'exec-and-forget open -n /Applications/Nix\ Apps/Signal.app --args --use-tray-icon'
 
 alt-shift-semicolon = 'mode service'
 
