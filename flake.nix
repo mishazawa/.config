@@ -36,9 +36,7 @@
           pkgs.tmux
           pkgs.mkalias
           pkgs.vscodium
-          pkgs.librewolf
           pkgs.tor
-          pkgs.signal-desktop
         ];
 
       fonts.packages = [
@@ -49,16 +47,18 @@
         enable = true;
         casks = [
           "the-unarchiver"
-          "aerospace"
+          "nikitabobko/tap/aerospace"
           "alt-tab"
           "dimentium/autoraise/autoraiseapp"
           "karabiner-elements"
           "docker"
+          "hammerspoon"
         ];
 
         masApps = {
 
         };
+        
         onActivation.autoUpdate = true;
         onActivation.upgrade = true;
       };
