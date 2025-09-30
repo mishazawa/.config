@@ -66,6 +66,22 @@ alt-shift-semicolon = 'mode service'
 if.app-id = 'org.whispersystems.signal-desktop'
 run = ['layout floating']
 
+[[on-window-detected]]
+if.workspace = '6'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.workspace = '7'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.workspace = '8'
+run = 'layout floating'
+
+[[on-window-detected]]
+if.workspace = '9'
+run = 'layout floating'
+
 [mode.service.binding]
 esc = ['reload-config', 'mode main']
 r = ['flatten-workspace-tree', 'mode main'] # reset layout
