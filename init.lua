@@ -1,12 +1,22 @@
-hs.loadSpoon("Cherry")
-spoon.Cherry:bindHotkeys()
-
 function find_window_under_cursor () 
   local position = hs.geometry.new(hs.mouse.absolutePosition())
   local screen = hs.mouse.getCurrentScreen()
   return hs.fnutils.find(hs.window.orderedWindows(),
     function(w) return screen == w:screen() and position:inside(w:frame()) end)
 end
+
+function reload_auto_raise()
+  local app = hs.application.get("AutoRaise")
+  if app then
+    app:kill()
+    hs.timer.doAfter(0.5, function()  -- small delay to ensure quit
+      hs.execute([[open -n /Applications/AutoRaise.app --args -pollMillis 50 -delay 1 -scale 2.5 -altTaskSwitcher false -ignoreSpaceChanged false -disableKey control -mouseDelta 100.0]], true)
+    end)
+  else
+    hs.execute([[open -n /Applications/AutoRaise.app --args -pollMillis 50 -delay 1 -scale 2.5 -altTaskSwitcher false -ignoreSpaceChanged false -disableKey control -mouseDelta 100.0]], true)
+  end
+end
+
 
 local cancelCmdClick = hs.eventtap.new({ hs.eventtap.event.types.leftMouseDown }, function (e)
   local mods = hs.eventtap.checkKeyboardModifiers()
@@ -38,5 +48,16 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "P", function ()
   end
 end)
 
+
+hs.hotkey.bind({"shift", "alt"}, "return", function()
+    hs.execute("open -n /Applications/kitty.app", true)
+end)
+
+hs.hotkey.bind({"shift", "alt"}, "delete", function()
+    hs.execute("aerospace enable toggle", true)
+end)
+
+
+reload_auto_raise()
 cancelCmdClick:start()
 hs.alert.show("Config loaded")
