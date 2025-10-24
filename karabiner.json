@@ -82,7 +82,7 @@
                         },
                         {
                             "from": { "key_code": "keypad_0" },
-                            "to": [{ "key_code": "keypad_asterisk" }]
+                            "to": [{ "key_code": "h" }]
                         },
                         {
                             "from": { "key_code": "keypad_1" },
@@ -90,7 +90,7 @@
                         },
                         {
                             "from": { "key_code": "keypad_2" },
-                            "to": [{ "key_code": "s" }]
+                            "to": [{ "key_code": "d" }]
                         },
                         {
                             "from": { "key_code": "keypad_3" },
@@ -102,7 +102,7 @@
                         },
                         {
                             "from": { "key_code": "keypad_5" },
-                            "to": [{ "key_code": "2" }]
+                            "to": [{ "key_code": "s" }]
                         },
                         {
                             "from": { "key_code": "keypad_6" },
@@ -138,7 +138,7 @@
                         },
                         {
                             "from": { "key_code": "keypad_period" },
-                            "to": [{ "key_code": "e" }]
+                            "to": [{ "key_code": "left_option" }]
                         },
                         {
                             "from": { "key_code": "keypad_plus" },
@@ -170,212 +170,14 @@
                             "to": [{ "key_code": "left_command" }]
                         }
                     ]
-                }
-            ],
-            "fn_function_keys": [
-                {
-                    "from": { "key_code": "f4" },
-                    "to": [{ "apple_vendor_top_case_key_code": "illumination_down" }]
-                },
-                {
-                    "from": { "key_code": "f5" },
-                    "to": [{ "apple_vendor_top_case_key_code": "illumination_up" }]
-                }
-            ],
-            "name": "Krita",
-            "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
-        },
-        {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "macropad shift+h to shift+l",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            { "product_id": 37 },
-                                            { "vendor_id": 2522 }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["left_shift"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "l",
-                                        "modifiers": ["left_shift"],
-                                        "repeat": false
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Disable Option-click minimizing windows",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "modifiers": { "mandatory": ["left_option"] },
-                                    "pointing_button": "button1"
-                                },
-                                "to": [
-                                    {
-                                        "modifiers": [],
-                                        "pointing_button": "button1"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "fn + Esc",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": { "mandatory": ["fn"] }
-                                },
-                                "to": [{ "software_function": { "open_application": { "file_path": "/Applications/Toggle Fn Keys.app" } } }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "macropad cmd+space to z",
-                        "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            { "product_id": 37 },
-                                            { "vendor_id": 2522 }
-                                        ],
-                                        "type": "device_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "spacebar",
-                                    "modifiers": {
-                                        "mandatory": ["left_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "z",
-                                        "modifiers": [],
-                                        "repeat": false
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 37,
-                        "vendor_id": 2522
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "delete_or_backspace" },
-                            "to": [{ "key_code": "4" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_0" },
-                            "to": [{ "key_code": "left_command" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_1" },
-                            "to": [{ "key_code": "b" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_2" },
-                            "to": [{ "key_code": "w" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_3" },
-                            "to": [{ "key_code": "y" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_4" },
-                            "to": [{ "key_code": "1" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_5" },
-                            "to": [{ "key_code": "2" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_6" },
-                            "to": [{ "key_code": "3" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_7" },
-                            "to": [{ "key_code": "tab" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_8" },
-                            "to": [{ "key_code": "semicolon" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_9" },
-                            "to": [{ "key_code": "quote" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_asterisk" },
-                            "to": [{ "key_code": "d" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_enter" },
-                            "to": [{ "key_code": "spacebar" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_hyphen" },
-                            "to": [{ "key_code": "left_shift" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_num_lock" },
-                            "to": [{ "key_code": "escape" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_period" },
-                            "to": [{ "key_code": "e" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_plus" },
-                            "to": [{ "key_code": "x" }]
-                        },
-                        {
-                            "from": { "key_code": "keypad_slash" },
-                            "to": [{ "key_code": "h" }]
-                        }
-                    ]
                 },
                 {
                     "identifiers": {
                         "is_keyboard": true,
-                        "product_id": 2,
-                        "vendor_id": 7247
+                        "product_id": 11303,
+                        "vendor_id": 6700
                     },
                     "simple_modifications": [
-                        {
-                            "from": { "key_code": "application" },
-                            "to": [{ "apple_vendor_top_case_key_code": "keyboard_fn" }]
-                        },
                         {
                             "from": { "key_code": "left_command" },
                             "to": [{ "key_code": "left_option" }]
@@ -397,7 +199,7 @@
                     "to": [{ "apple_vendor_top_case_key_code": "illumination_up" }]
                 }
             ],
-            "name": "Rebelle",
+            "name": "Krita",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }
         }
